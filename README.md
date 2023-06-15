@@ -6,8 +6,7 @@
 4. Open cmd on the desktop and run
 
 ```bash
-docker run --name nvidia --rm -it -v <user tf folder>:/tf -p 8888:8888 tensorflow/tensorflow:1.13.1-jupyter
-# like: docker run --name nvidia --rm -it -v C:\Users\zehon\OneDrive\Desktop\tf:/tf -p 8888:8888 tensorflow/tensorflow:1.13.1-jupyter
+docker run --name nvidia --rm -it -p 8888:8888 tensorflow/tensorflow:1.13.1-jupyter
 ```
 
 5. Get the token address, for example:

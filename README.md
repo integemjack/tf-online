@@ -10,7 +10,7 @@ docker run --name nvidia --rm -it -v <user tf folder>:/tf -p 8888:8888 tensorflo
 # like: docker run --name nvidia --rm -it -v C:\Users\zehon\OneDrive\Desktop\tf:/tf -p 8888:8888 tensorflow/tensorflow:1.13.1-jupyter
 ```
 
-4. Get the token address, for example:
+5. Get the token address, for example:
 
 ```bash
 # http://(d57d8a94448a or 127.0.0.1):8888/?token=b0629e8a2dbabe858d9f93c37878a3eecafe23c80d30
@@ -18,11 +18,11 @@ docker run --name nvidia --rm -it -v <user tf folder>:/tf -p 8888:8888 tensorflo
 # http://127.0.0.1:8888/?token=b0629e8a2dbabe858d9f93c37878a3eecafe23c80d30
 ```
 
-5. Open the colab address：https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb
-6. Log in with your Google account
-7. Click the inverted triangle next to connect in the upper right corner and select connect to a local runtime
-8. Fill in the link obtained above and click connect
-9. This has been completed, you can use the local jupyter operation in colab, the generated file is in the directory you set above
+6. Open the colab address：https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb
+7. Log in with your Google account
+8. Click the inverted triangle next to connect in the upper right corner and select connect to a local runtime
+9. Fill in the link obtained above and click connect
+10. This has been completed, you can use the local jupyter operation in colab, the generated file is in the directory you set above
 
 
 ## ------------------------------------------------------------------------

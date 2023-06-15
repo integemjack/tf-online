@@ -2,7 +2,8 @@
 
 1. Download the latest docker client from the docker.com website
 2. Double-click the client to install, and restart after the installation is complete
-3. Open cmd on the desktop and run
+3. If you are using it for the first time and the network environment is not good, you can download the tf.tar image in advance and import it into docker. The tf.tar image address: https://github.com/integemjack/tf-online/releases/download/v1/tf.tar, [the specific process](https://github.com/integemjack/tf-online#import-image)
+4. Open cmd on the desktop and run
 
 ```bash
 docker run --name nvidia --rm -it -v <user tf folder>:/tf -p 8888:8888 tensorflow/tensorflow:1.13.1-jupyter

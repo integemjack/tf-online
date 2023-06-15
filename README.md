@@ -1,98 +1,99 @@
-# 使用 docker 桌面客户端
+# use docker desktop client
 
-1. 在 docker.com 网站上下载最新的 docker 客户端
-2. 双击客户端安装，待安装完成重启后
-3. 在桌面打开 cmd，运行
+1. Download the latest docker client from the docker.com website
+2. Double-click the client to install, and restart after the installation is complete
+3. Open cmd on the desktop and run
 
 ```bash
 docker run --name nvidia --rm -it -v <user tf folder>:/tf -p 8888:8888 tensorflow/tensorflow:1.13.1-jupyter
 # like: docker run --name nvidia --rm -it -v C:\Users\zehon\OneDrive\Desktop\tf:/tf -p 8888:8888 tensorflow/tensorflow:1.13.1-jupyter
 ```
 
-4. 获取 token 地址，比如：
+4. Get the token address, for example:
 
 ```bash
 # http://(d57d8a94448a or 127.0.0.1):8888/?token=b0629e8a2dbabe858d9f93c37878a3eecafe23c80d30
-# 将这个链接转化成
+# convert this link to
 # http://127.0.0.1:8888/?token=b0629e8a2dbabe858d9f93c37878a3eecafe23c80d30
 ```
 
-5. 打开 colab 地址：https://colab.research.google.com/github/google/aiyprojects-raspbian/blob/aiyprojects/tutorials/vision/aiy_retrain_classification.ipynb
-6. 登录谷歌账号
-7. 点击右上角 connect 旁边的倒三角，选择 connect to a local runtime
-8. 将上面获取的链接 填在下面并点击 connect
-9. 到此已经完成，可以在 colab 里使用本地 jupyter 操作，生成的文件在你上面设置的目录里
+5. Open the colab address：https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb
+6. Log in with your Google account
+7. Click the inverted triangle next to connect in the upper right corner and select connect to a local runtime
+8. Fill in the link obtained above and click connect
+9. This has been completed, you can use the local jupyter operation in colab, the generated file is in the directory you set above
 
 
 ## ------------------------------------------------------------------------
 
-# 导出镜像
+# export image
 
-在一个目录里面打开 cmd，运行下面命令就可以在当前目录生成 tf.tar 镜像文件
+Open cmd and run the following command to generate a tf.tar image file in the set directory
 
 ```bash
-docker save -o tf.tar tensorflow/tensorflow:1.13.1-jupyter
+docker save -o <tf.tar absolute path> tensorflow/tensorflow:1.13.1-jupyter
 ```
 
-# 导入镜像
+# import image
 
-进入的你的 U 盘目录，打开 cmd
+You can download the tf.tar file through https://github.com/integemjack/tf-online/releases/download/v1/tf.tar, or you can get tf.tar through the above export
 
 ```bash
-docker load -i tf.tar
+docker load -i <tf.tar absolute path>
 ```
 
 ## ------------------------------------------------------------------------
 
 
-# 普通方式安装
-## 第一步
+# Normal installation
+## first step
 
-1. 以管理员方式运行 PowerShell
+1. Run PowerShell as Administrator
 
 ```bash
-# 启动 windows 的子系统
+# Start the windows subsystem
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 
-# 下载ubuntu系统
+# Download the ubuntu system
 wsl --install
-# 设置 wsl 为 2
+
+# set wsl to 2
 wsl --set-default-version 2
 
 ```
 
-2. 在开始菜单中找到 ubuntu，并打开进行初始化，设置账号和密码
+2. Find ubuntu in the start menu, open it for initialization, and set the account and password
 
-# 第二步
+# second step
 
-1. 在第一步的基础上
+1. Building on the first step
 
 ```bash
-# 更新系统
+# update system
 sudo apt update
 sudo apt install docker.io
 
-# 安装gpu支持
+# Install gpu support
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 
-# 下载镜像
+# Download mirror
 docker pull tensorflow/tensorflow:1.13.1-gpu-jupyter
 
-# 运行镜像 CPU
+# Run the mirrored CPU
 sudo docker run -it -p 8888:8888 tensorflow/tensorflow:1.13.1-gpu-jupyter
 
-# 运行镜像 GPU 【需要你的计算机安装最新的nvidia驱动】
+# Run the mirrored GPU [You need to install the latest nvidia driver on your computer]
 sudo docker run -it --runtime=nvidia -p 8888:8888 tensorflow/tensorflow:1.13.1-gpu-jupyter
 ```
 
-2. 查看生成的地址，就可以在网页中打开使用
+2. View the generated address, you can open it on the web page
 
-3. 打开 https://colab.research.google.com/github/google/aiyprojects-raspbian/blob/aiyprojects/tutorials/vision/aiy_retrain_classification.ipynb 下载到本地
+3. Open https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb and download it locally
 
-4. 将下载的文件上传到 jupyter 上
+4. Upload the downloaded file to jupyter
 

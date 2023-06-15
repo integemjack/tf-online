@@ -18,7 +18,7 @@ docker run --name nvidia --rm -it -v <user tf folder>:/tf -p 8888:8888 tensorflo
 # http://127.0.0.1:8888/?token=b0629e8a2dbabe858d9f93c37878a3eecafe23c80d30
 ```
 
-6. Open the colab address：[https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb](https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb)
+6. Open the colab address：[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb){:target="_blank"}
 7. Log in with your Google account
 8. Click the inverted triangle next to connect in the upper right corner and select connect to a local runtime
 9. Fill in the link obtained above and click connect
@@ -94,7 +94,7 @@ sudo docker run -it --runtime=nvidia -p 8888:8888 tensorflow/tensorflow:1.13.1-g
 
 2. View the generated address, you can open it on the web page
 
-3. Open [https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb](https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb) and download it locally
+3. Open [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb){:target="_blank"} and download it locally
 
 4. Upload the downloaded file to jupyter
 

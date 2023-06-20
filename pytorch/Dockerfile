@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:latest
+FROM graphcore/pytorch-jupyter:latest
 
 RUN apt update
 RUN apt install wget git curl -y

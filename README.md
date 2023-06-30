@@ -12,9 +12,8 @@ docker run --name nvidia --rm -it -p 8888:8888 integem/tf:latest bash -c "cd /ho
 5. Get the token address, for example:
 
 ```bash
-# http://(d57d8a94448a or 127.0.0.1):8888/?token=b0629e8a2dbabe858d9f93c37878a3eecafe23c80d30
-# convert this link to
 # http://127.0.0.1:8888/?token=b0629e8a2dbabe858d9f93c37878a3eecafe23c80d30
+# Hold down ctrl and click on the link to open jupyter lab
 ```
 
 

@@ -25,7 +25,7 @@ docker run --name nvidia --rm -it -p 8888:8888 integem/tf:latest
 Open cmd and run the following command to generate a tf.tar image file in the set directory
 
 ```bash
-docker save -o <tf.tar absolute path> tensorflow/tensorflow:1.13.1-jupyter
+docker save -o <tf.tar absolute path> integem/tf:latest
 ```
 
 # import image
@@ -76,18 +76,12 @@ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 
 # Download mirror
-docker pull tensorflow/tensorflow:1.13.1-gpu-jupyter
+docker pull integem/tf:latest
 
 # Run the mirrored CPU
-sudo docker run -it -p 8888:8888 tensorflow/tensorflow:1.13.1-gpu-jupyter
+sudo docker run -it -p 8888:8888 integem/tf:latest
 
 # Run the mirrored GPU [You need to install the latest nvidia driver on your computer]
-sudo docker run -it --runtime=nvidia -p 8888:8888 tensorflow/tensorflow:1.13.1-gpu-jupyter
+sudo docker run -it --runtime=nvidia -p 8888:8888 integem/tf:latest
 ```
-
-2. View the generated address, you can open it on the web page
-
-3. Open <a href="https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb" target="_blank">![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)</a> and download it locally
-
-4. Upload the downloaded file to jupyter
 

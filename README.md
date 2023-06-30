@@ -6,7 +6,7 @@
 4. Open cmd on the desktop and run
 
 ```bash
-docker run --name nvidia --rm -it -p 8888:8888 tensorflow/tensorflow:1.13.1-jupyter
+docker run --name nvidia --rm -it -p 8888:8888 integem/tf:latest
 ```
 
 5. Get the token address, for example:
@@ -16,12 +16,6 @@ docker run --name nvidia --rm -it -p 8888:8888 tensorflow/tensorflow:1.13.1-jupy
 # convert this link to
 # http://127.0.0.1:8888/?token=b0629e8a2dbabe858d9f93c37878a3eecafe23c80d30
 ```
-
-6. Open the colab address：<a href="https://colab.research.google.com/github/integemjack/tf-online/blob/main/aiy_retrain_classification.ipynb" target="_blank">![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)</a>
-7. Log in with your Google account
-8. Click the inverted triangle next to connect in the upper right corner and select connect to a local runtime
-9. Fill in the link obtained above and click connect
-10. This has been completed, you can use the local jupyter operation in colab, the generated file is in the directory you set above
 
 
 ## ------------------------------------------------------------------------

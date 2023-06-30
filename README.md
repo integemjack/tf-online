@@ -6,7 +6,7 @@
 4. Open cmd on the desktop and run
 
 ```bash
-docker run --name nvidia --rm -it -p 8888:8888 integem/tf:latest
+docker run --name nvidia --rm -it -p 8888:8888 integem/tf:latest bash -c "cd /home && wget https://raw.githubusercontent.com/integemjack/tf-online/main/aiy_retrain_classification.ipynb && jupyter lab --allow-root"
 ```
 
 5. Get the token address, for example:

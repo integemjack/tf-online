@@ -1,4 +1,4 @@
-FROM huggingface/transformers-pytorch-gpu:4.23.0
+FROM huggingface/transformers-pytorch-gpu:4.29.2
 
 WORKDIR /app
 

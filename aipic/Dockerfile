@@ -7,4 +7,4 @@ COPY ./server.py ./server.py
 RUN pip3 install diffusers
 RUN pip3 install flask_cors
 
-ENTRYPOINT ["python", "/app/server.py"]
+ENTRYPOINT ["python3", "/app/server.py"]

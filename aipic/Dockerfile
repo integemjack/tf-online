@@ -1,8 +1,10 @@
-FROM nvidia/cuda:11.7.1-devel-ubuntu22.04
+FROM huggingface/transformers-pytorch-gpu:4.29.2
 
 WORKDIR /app
 
 COPY ./server.py ./server.py
+
+RUN pip3 install diffusers flask flask_cors accelerate
 
 # RUN apt update
 # RUN apt install python3 python3-pip -y
@@ -13,16 +15,16 @@ COPY ./server.py ./server.py
 # RUN pip3 install transformers
 # RUN pip3 install accelerate
 
-RUN apt update && apt install curl wget -y
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-RUN bash Miniconda3-latest-Linux-x86_64.sh -b
-RUN echo export PATH="/root/miniconda3/bin:$PATH" >> ~/.bashrc
-RUN source ~/.bashrc
-RUN conda create --name py36_torch python=3.6 -y
-RUN conda activate py36_torch
-RUN conda init bash
-RUN conda install pytorch torchvision torchaudio -c pytorch -y
-RUN pip3 install diffusers flask flask_cors accelerate transformers
+# RUN apt update && apt install curl wget -y
+# RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# RUN bash Miniconda3-latest-Linux-x86_64.sh -b
+# RUN echo export PATH="/root/miniconda3/bin:$PATH" >> ~/.bashrc
+# RUN source ~/.bashrc
+# RUN conda create --name py36_torch python=3.6 -y
+# RUN conda activate py36_torch
+# RUN conda init bash
+# RUN conda install pytorch torchvision torchaudio -c pytorch -y
+# RUN pip3 install diffusers flask flask_cors accelerate transformers
 
 
 # apt update && apt install curl wget -y

@@ -15,7 +15,7 @@ RUN apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev -y
 RUN apt-get install libxvidcore-dev libx264-dev -y
 RUN apt-get install libgtk-3-dev -y
 RUN apt-get install libatlas-base-dev gfortran -y
-RUN apt-get install python2.7-dev python3.5-dev -y
+# RUN apt-get install python2.7-dev python3.5-dev -y
 
 RUN apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-tools -y
 

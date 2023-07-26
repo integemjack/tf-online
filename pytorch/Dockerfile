@@ -10,7 +10,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 RUN apt-get install build-essential cmake pkg-config -y
-RUN apt-get install libjpeg-dev libtiff5-dev libjasper-dev -y
+RUN apt-get install libjpeg-dev libtiff5-dev -y
 RUN apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev -y
 RUN apt-get install libxvidcore-dev libx264-dev -y
 RUN apt-get install libgtk-3-dev -y

@@ -6,7 +6,7 @@ RUN pip3 install jupyterlab boto3 pandas tensorboard torchvision opencv-contrib-
 RUN jupyter lab --generate-config
 RUN sed -i "s/# c.ServerApp.ip = 'localhost'/c.ServerApp.ip = '0.0.0.0'/g" /root/.jupyter/jupyter_lab_config.py
 
-RUN apt upgrade -y
+# RUN apt upgrade -y
 
 RUN apt install build-essential cmake pkg-config -y
 RUN apt install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev -y
